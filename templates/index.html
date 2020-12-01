@@ -1,9 +1,14 @@
-{% extends "public/templates/public_template.html" %}
+<html>
+<head>
+        <meta charset="utf-8"/>
+        <title>Dog Classifier</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
 
-{% block title %}Upload{% endblock %}
-
-{% block main %}
-
+        <script src="{{ url_for('static', filename='js/javascript.js') }}"></script>
+    </head>
+<body>
 <div class="container">
   <div class="row">
     <div class="col">
@@ -28,5 +33,5 @@
     </div>
   </div>
 </div>
-
-{% endblock %}
+</body>
+</html>
