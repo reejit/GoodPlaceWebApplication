@@ -13,7 +13,7 @@ def allowed_file(filename):
 
 @app.route('/')
 def render_page():
-    return render_template('proba.html')
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():

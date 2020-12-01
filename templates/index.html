@@ -1,32 +1,31 @@
 <html>
 <head>
-        <meta charset="utf-8"/>
-        <title>Good Place Episode Recognition</title>
+  <meta charset="UTF-8">
+    <title>Good Place Episode Recognizer</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
     </head>
 <body>
-<div class="container">
-  <div class="row">
-    <div class="col">
-
-      <h1>Upload an image</h1>
-      <hr>
 
       <form action="/predict" method="POST" enctype="multipart/form-data">
 
         <div class="form-group">
-          <label>Select image</label>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" name="image" id="image">
-            <label class="custom-file-label" for="image">Select image...</label>
-          </div>
-        </div>
+          <div class="frame">
+	<div class="center">
+		<div class="title">
+			<h1>Drop file to upload</h1>
+		</div>
 
-        <button type="submit" class="btn btn-primary">Upload</button>
+		<div class="dropzone">
+			<img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+			<input type="file" class="upload-input" name="image" />
+		</div>
+
+		<button type="submit" class="btn" name="uploadbutton">Upload file</button>
+
+	</div>
+
 
       </form>
 
-    </div>
-  </div>
-</div>
 </body>
 </html>
