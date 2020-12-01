@@ -3,7 +3,7 @@ import io
 from PIL import Image
 from torch_utils import get_prediction, transform_image
 
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static')
 
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -13,7 +13,7 @@ def allowed_file(filename):
 
 @app.route('/')
 def render_page():
-    return render_template('index.html')
+    return render_template('proba.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -30,7 +30,6 @@ def predict():
             image = Image.open(image)
             tensor = transform_image(image)
             prediction = get_prediction(tensor)
-            data = {'prediction': prediction}
-            return jsonify(data)
+            return render_template('rezultat.html', rez=prediction)
         except:
             return jsonify({'error': 'error during prediction'})
